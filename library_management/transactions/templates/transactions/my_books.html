@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4 text-center">My Issued Books</h2>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Book</th>
+            <th>Issued On</th>
+            <th>Returned On</th>
+            <th>Fine (₹)</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in issued %}
+        <tr>
+            <td>{{ item.book.title }}</td>
+            <td>{{ item.issue_date }}</td>
+            <td>{{ item.return_date|default:"Not Returned" }}</td>
+            <td>₹ {{ item.fine_amount }}</td>
+
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3" class="text-center">No books issued</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

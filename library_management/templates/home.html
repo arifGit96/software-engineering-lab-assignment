@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<img src="{% static 'images/mike-hindle-arbwPpKUq_M-unsplash.jpg' %}"
+     class="img-fluid rounded mb-4">
+
+<div class="text-center">
+    <h1>Online Library Management System</h1>
+    <p class="lead mt-3">Search, issue, and manage library books easily.</p>
+
+    <a href="/books/" class="btn btn-primary btn-lg me-2">View Books</a>
+    <a href="/transactions/my-books/" class="btn btn-secondary btn-lg">My Books</a>
+</div>
+{% endblock %}
